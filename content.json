@@ -1,0 +1,66 @@
+{
+    "es": {
+        "navbar": {
+            "aboutUs": "Sobre Nosotros",
+            "services": "Servicios",
+            "mission": "Misión",
+            "vision": "Visión",
+            "values": "Valores",
+            "contact": "Contacto"
+        },
+        "sections": {
+            "aboutUs": "LOGIPORT S.R.L., fundada en junio de 2018 y registrada ante la Prefectura Naval Argentina (número de registro 90), se especializa en servicios de seguridad portuaria. Proveemos evaluaciones y planes de protección completos para buques e instalaciones portuarias, así como formación acorde al Código PBIP. Con una amplia experiencia en seguridad marítima, nuestra misión es ofrecer servicios de alta calidad que cumplan con los estándares de la industria portuaria y naviera.",
+            "services": {
+                "service1": "Evaluación de Protección de Buques",
+                "service2": "Planes de Protección de Instalaciones Portuarias",
+                "service3": "Capacitación en Seguridad Marítima",
+                "service4": "Consultoría en Gestión de Recursos de Seguridad"
+            },
+            "mission": "Nuestra misión es ofrecer formación y servicios de seguridad que mejoren las capacidades de nuestros clientes, asegurando que reciban el nivel de calidad esperado en el sector marítimo.",
+            "vision": "Ser líderes en servicios de seguridad portuaria, reconocidos por nuestra excelencia y compromiso con la calidad.",
+            "values": {
+                "value1": "Integridad",
+                "value2": "Compromiso",
+                "value3": "Excelencia",
+                "value4": "Innovación"
+            },
+            "contact": {
+                "address": "Dirección",
+                "phone": "Teléfono",
+                "email": "Correo Electrónico"
+            }
+        }
+    },
+    "en": {
+        "navbar": {
+            "aboutUs": "About Us",
+            "services": "Services",
+            "mission": "Mission",
+            "vision": "Vision",
+            "values": "Values",
+            "contact": "Contact"
+        },
+        "sections": {
+            "aboutUs": "LOGIPORT S.R.L., founded in June 2018 and registered with the Argentine Naval Prefecture (registration number 90), specializes in port security services. We provide comprehensive security assessments and plans for ships and port facilities, as well as training aligned with the ISPS Code. With extensive expertise in maritime security, our mission is to deliver top-quality services that meet the high standards of the port and shipping industries.",
+            "services": {
+                "service1": "Ship Security Assessment",
+                "service2": "Port Facility Security Plans",
+                "service3": "Maritime Security Training",
+                "service4": "Security Resource Management Consulting"
+            },
+            "mission": "Our mission is to offer training and security services that enhance our clients' capabilities, ensuring they receive the quality expected in the maritime sector.",
+            "vision": "To be leaders in port security services, recognized for our excellence and commitment to quality.",
+            "values": {
+                "value1": "Integrity",
+                "value2": "Commitment",
+                "value3": "Excellence",
+                "value4": "Innovation"
+            },
+            "contact": {
+                "address": "Address",
+                "phone": "Phone",
+                "email": "Email"
+            }
+        }
+    }
+}
