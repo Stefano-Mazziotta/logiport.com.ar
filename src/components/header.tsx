@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { MenuIcon } from "./icons/menu-icon";
+import MenuMobile from "./menu-button";
 
 export function Header() {
   return (
-    <header className="bg-principal text-white">
-      <nav>
-        <Link href="/">
-          <h1 className="logo">Logiport</h1>
+    <header className="text-principal">
+      <nav className="flex justify-between items-center">
+        <Link className="z-20" href="/">
+          <h1 className="text-3xl uppercase font-bold">Logiport</h1>
         </Link>
-
-        <MenuIcon />
+        <MenuMobile />
       </nav>
 
       <div className="hero"></div>
