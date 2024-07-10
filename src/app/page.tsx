@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      
       <section id="services">
         <h2>Our Services</h2>
         {/* Add content about your services here */}
