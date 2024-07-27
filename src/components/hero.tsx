@@ -19,9 +19,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="h-[85vh] bg-hero-img bg-cover bg-center flex items-center justify-center">
-      <div className="text-black text-center">
-        <h1 className="text-4xl font-bold mb-4">LOGIPORT</h1>
+    <section className="h-[85vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center">
+      <div className="bg-black bg-opacity-80 absolute inset-0"></div>
+      <div className="text-white text-center relative">
+        <h1 className="text-4xl font-bold mb-4">Proteger es nuestra misión</h1>
         <p className="text-xl">{typedText}</p>
       </div>
     </section>
