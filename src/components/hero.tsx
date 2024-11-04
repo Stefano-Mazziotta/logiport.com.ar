@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function Hero() {
+function Hero () {
   const [typedText, setTypedText] = useState("");
   const textToType = "Logistics solutions for your business";
 
@@ -28,3 +28,5 @@ export function Hero() {
     </section>
   );
 }
+
+export default Hero;

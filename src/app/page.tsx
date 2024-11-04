@@ -1,11 +1,11 @@
-import { Header } from "@/components/header";
+import Hero from "@/components/hero";
 import Image from "next/image";
 import Link from 'next/link';
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Hero />
       
       <section id="services">
         <h2>Our Services</h2>
