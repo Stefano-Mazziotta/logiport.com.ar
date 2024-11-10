@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        principal: "#150D2D",
+        primary: "#150D2D",
       },
       backgroundImage: {
         "hero-img": "url('/images/hero.jpg')",
