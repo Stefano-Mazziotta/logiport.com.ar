@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="w-full h-20 bg-white sticky top-0 z-20 flex justify-between items-center px-10">
+      <nav className="w-full h-20 bg-white sticky top-0 z-20 flex justify-between items-center px-5">
         <Logo />
         <button
           type="button"
