@@ -13,7 +13,7 @@ const Hero: React.FC = async () => {
   const firstPart = words.join(" ");
 
   return (
-    <header className="flex flex-col gap-5">
+    <header className="flex flex-col gap-5 mb-5">
       {/* Contenido */}
       <section className="flex flex-col text-left px-2 md:px-10 xl:px-20">
         {/* Título Principal */}

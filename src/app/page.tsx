@@ -1,16 +1,11 @@
 import Hero from "@/components/hero";
-import Image from "next/image";
-import Link from "next/link";
+import ServiceSection from "@/sections/servicesSection";
 
 export default function Home() {
   return (
     <>
       <Hero />
-
-      <section id="services">
-        <h2>Our Services</h2>
-        {/* Add content about your services here */}
-      </section>
+      <ServiceSection />
       <section id="about">
         <h2>About Us</h2>
         {/* Add content about your company here */}
