@@ -13,38 +13,41 @@ const Hero: React.FC = async () => {
   const firstPart = words.join(" ");
 
   return (
-    <section className="h-[85vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center">
-      {/* Fondo oscuro */}
-      <div className="bg-black bg-opacity-85 absolute inset-0"></div>
-
+    <header className="flex flex-col gap-5">
       {/* Contenido */}
-      <div className="text-white relative flex flex-col p-4 text-left">
+      <section className="flex flex-col text-left px-2 md:px-10 xl:px-20">
         {/* Título Principal */}
-        <h1 className="text-4xl font-extrabold mb-4 md:text-6xl lg:text-7xl xl:text-8xl text-primary">
+        <h1 className="text-foreground text-4xl font-extrabold mb-4 md:text-6xl lg:text-7xl xl:text-8xl ">
           {title}
+          <span className="text-primary">.</span>
         </h1>
 
         {/* Descripción secundaria con efecto de typing */}
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-200 text-left mb-8">
+        <p className="text-lg text-primary md:text-xl lg:text-2xl mb-5">
           <TypingEffect
-            className="min-w-[100px] max-w-[800px] inline-block font-light"
-            fixedText="Somos el aliado estratégico para lograr la mejor"
+            className="max-w-[800px] inline-block text-foreground/80"
+            fixedText="Tu aliado estratégico para lograr la mejor"
             texts={texts}
-            dynamicTextClassName="text-gray-200 font-bold"
+            dynamicTextClassName="text-primary font-bold"
           />
         </p>
 
         {/* Botón de acción */}
         <div>
           <Button
-            className="rounded-sm text-secondary bg-primary/60 transition duration-300 text-base md:text-xl py-3 px-6 shadow-md hover:bg-primary/80"
+            className="bg-foreground text-base text-secondary transition duration-300 py-3 px-6 shadow-md md:text-xl md:rounded-md hover:bg-primary"
             size={"lg"}
           >
-            Contáctanos ahora
+            Haz tu consulta ahora
           </Button>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="md:px-10 xl:px-20">
+        <div className="h-[50vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center md:shadow-xl md:rounded-md xl:h-[66vh]">
+          <div className="bg-black bg-opacity-40 absolute inset-0 rounded-md"></div>
+        </div>
+      </section>
+    </header>
   );
 };
 
