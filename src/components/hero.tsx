@@ -43,7 +43,7 @@ const Hero: React.FC = async () => {
         </div>
       </section>
       <section className="md:px-10 xl:px-20">
-        <div className="h-[50vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center md:shadow-xl md:rounded-md xl:h-[66vh]">
+        <div className="h-[40vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center md:shadow-xl md:rounded-md xl:h-[66vh]">
           <div className="bg-black bg-opacity-40 absolute inset-0 rounded-md"></div>
         </div>
       </section>
