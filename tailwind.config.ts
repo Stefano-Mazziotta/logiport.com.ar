@@ -59,6 +59,20 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        gradient: {
+          "0%, 100%": { "background-position": "0% 50%" },
+          "50%": { "background-position": "100% 50%" },
+        },
+      },
+      animation: {
+        blink: "blink 1.5s infinite",
+        gradient: "gradient 3s ease infinite",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

@@ -4,7 +4,7 @@ import Image from "next/image";
 const Logo = () => {
   return (
     <>
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center gap-1">
         <Image
           src={"/logo.svg"}
           alt="Logiport"
@@ -12,6 +12,9 @@ const Logo = () => {
           width={100}
           height={100}
         />
+        <h1 className="text-3xl font-extrabold text-foreground md:text-4xl">
+          LOGIPORT
+        </h1>
       </Link>
     </>
   );

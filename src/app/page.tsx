@@ -1,12 +1,12 @@
 import Hero from "@/components/hero";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      
+
       <section id="services">
         <h2>Our Services</h2>
         {/* Add content about your services here */}
@@ -19,9 +19,7 @@ export default function Home() {
         <h2>Contact Us</h2>
         {/* Add contact form or information here */}
       </section>
-      <footer>
-        {/* Add footer content here */}
-      </footer>
+      <footer>{/* Add footer content here */}</footer>
     </>
   );
 }
