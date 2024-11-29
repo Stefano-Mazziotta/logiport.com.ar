@@ -15,10 +15,6 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
   fixedText,
   dynamicTextClassName,
 }) => {
-  if (texts.length === 0) {
-    return null;
-  }
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isCursorVisible, setIsCursorVisible] = useState(true);
@@ -60,6 +56,10 @@ const TypingEffect: React.FC<TypingEffectProps> = ({
 
     return () => clearInterval(cursorInterval);
   }, []);
+
+  if (texts.length === 0) {
+    return null;
+  }
 
   return (
     <span className={`inline-block ${className}`} style={{ minWidth: "100px" }}>
