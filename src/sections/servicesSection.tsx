@@ -1,5 +1,6 @@
 "use server";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import {
   Ship,
   Anchor,
@@ -44,6 +45,7 @@ const ServiceSection: React.FC = async () => {
       icon: ShieldCheck,
     },
   ];
+
   return (
     <section id="services" className="px-2 md:px-10 xl:px-20">
       <h2 className="text-foreground text-3xl font-bold flex mb-4">
@@ -56,15 +58,17 @@ const ServiceSection: React.FC = async () => {
           return (
             <Card
               key={index}
-              className={`flex flex-col items-center justify-center p-4 ${
+              className={`flex flex-col items-center justify-center gap-5 p-4 ${
                 isOdd
                   ? "bg-foreground text-secondary"
                   : "bg-secondary text-foreground"
               }`}
             >
               <service.icon />
+              <Separator
+                className={`w-10 ${isOdd ? "bg-foreground" : "bg-secondary"}`}
+              />
               <h3>{service.title}</h3>
-              <p>{service.description}</p>
             </Card>
           );
         })}

@@ -4,8 +4,8 @@ import { Button } from "./ui/button";
 
 const Hero: React.FC = async () => {
   // Datos que podrían venir de una API
-  const title = "Potenciamos los puertos";
-  const texts = ["logística.", "gestión.", "operación."];
+  const title = "Potenciamos los ";
+  const texts = ["logística.", "gestión.", "operación.", "protección."];
 
   // Divide el título en palabras
   const words = title.split(" ");
@@ -19,13 +19,13 @@ const Hero: React.FC = async () => {
         {/* Título Principal */}
         <h1 className="text-foreground text-4xl font-extrabold mb-4 md:text-6xl lg:text-7xl xl:text-8xl ">
           {title}
-          <span className="text-primary">.</span>
+          <span className="text-primary">puertos.</span>
         </h1>
 
         {/* Descripción secundaria con efecto de typing */}
         <p className="text-lg text-primary md:text-xl lg:text-2xl mb-5">
           <TypingEffect
-            className="max-w-[800px] inline-block text-foreground/80"
+            className="max-w-[800px] inline-block text-foreground/80 font-base"
             fixedText="Tu aliado estratégico para lograr la mejor"
             texts={texts}
             dynamicTextClassName="text-primary font-bold"
