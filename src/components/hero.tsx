@@ -28,7 +28,7 @@ const Hero: React.FC = async () => {
             className="max-w-[800px] inline-block text-foreground/80 font-base"
             fixedText="Tu aliado estratégico para lograr la mejor"
             texts={texts}
-            dynamicTextClassName="text-primary font-bold"
+            dynamicTextClassName="text-primary font-base"
           />
         </p>
 

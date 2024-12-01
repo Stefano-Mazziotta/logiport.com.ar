@@ -20,29 +20,29 @@ interface Service {
 const ServiceSection: React.FC = async () => {
   const services: Service[] = [
     {
-      title: "Servicio 1",
+      title: "Capacitación",
       description: "Descripción del servicio 1",
-      icon: Ship,
+      icon: Lightbulb,
     },
     {
-      title: "Servicio 2",
+      title: "OPIP",
       description: "Descripción del servicio 2",
       icon: Anchor,
     },
     {
-      title: "Servicio 3",
+      title: "Plan de protección",
       description: "Descripción del servicio 3",
-      icon: Handshake,
+      icon: ShieldCheck,
     },
     {
-      title: "Servicio 4",
+      title: "Consultoría marítima",
       description: "Descripción del servicio 4",
-      icon: Lightbulb,
+      icon: Ship,
     },
     {
       title: "Servicio 5",
       description: "Descripción del servicio 5",
-      icon: ShieldCheck,
+      icon: Handshake,
     },
   ];
 
@@ -52,13 +52,13 @@ const ServiceSection: React.FC = async () => {
         <ChevronRight size={36} className="text-primary" />
         Servicios
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div className="flex flex-col justify-center items-center gap-5">
         {services.map((service, index) => {
           const isOdd = index % 2 !== 0;
           return (
             <Card
               key={index}
-              className={`flex flex-col items-center justify-center gap-5 p-4 ${
+              className={`flex flex-col items-center justify-center gap-3 p-6 w-[100px] h-[100px] ${
                 isOdd
                   ? "bg-foreground text-secondary"
                   : "bg-secondary text-foreground"
