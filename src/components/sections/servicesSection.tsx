@@ -50,8 +50,11 @@ const ServiceSection: React.FC = async () => {
   ];
 
   return (
-    <section id="services" className="px-4 md:px-10 xl:px-20 py-10">
-      <h2 className="text-foreground text-4xl font-extrabold flex items-center mb-8">
+    <section
+      id="services"
+      className="px-4 md:px-10 xl:px-20 pt-10 pb-20 bg-foreground"
+    >
+      <h2 className="text-secondary text-4xl font-extrabold flex items-center mb-10">
         <ChevronRight size={36} className="text-primary" />
         Servicios
       </h2>
@@ -59,7 +62,7 @@ const ServiceSection: React.FC = async () => {
         {services.map((service, index) => (
           <Card
             key={index}
-            className="relative flex flex-col rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-[1px] border-foreground"
+            className="relative flex flex-col rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-4 border-primary/50"
           >
             <CardHeader className="flex flex-col">
               <service.icon className="w-12 h-12 text-primary" />
