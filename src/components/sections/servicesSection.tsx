@@ -8,12 +8,14 @@ import {
 } from "@/components/ui/card";
 import {
   Ship,
-  ShieldCheck,
   ChevronRight,
   LucideProps,
   PersonStanding,
   Presentation,
   ArrowRight,
+  Shield,
+  Anchor,
+  Handshake,
 } from "lucide-react";
 
 interface Service {
@@ -32,12 +34,12 @@ const ServiceSection: React.FC = async () => {
     {
       title: "Prestaciones OPIP",
       description: "Asesoramiento y soluciones integrales OPIP.",
-      icon: PersonStanding,
+      icon: Anchor,
     },
     {
       title: "Plan de protección",
       description: "Seguridad y respaldo adaptados a tus necesidades.",
-      icon: ShieldCheck,
+      icon: Handshake,
     },
     {
       title: "Consultoría marítima",
@@ -52,20 +54,20 @@ const ServiceSection: React.FC = async () => {
         <ChevronRight size={36} className="text-primary mr-2" />
         Servicios
       </h2>
-      <main className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <main className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, index) => (
           <Card
             key={index}
-            className="relative flex flex-col items-center justify-center p-6 rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary"
+            className="relative flex flex-col items-center p-6 rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary"
           >
-            <CardHeader className="flex flex-col items-center gap-1">
+            <CardHeader className="flex flex-col items-center">
               <service.icon className="w-12 h-12 text-primary" />
               <div className="h-[2px] w-12 bg-primary"></div>
-              <CardTitle className="text-xl font-semibold">
+              <CardTitle className="text-xl font-semibold text-center">
                 {service.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="text-center">
+            <CardContent className="h-20 text-center">
               <CardDescription className="text-sm text-muted-foreground">
                 {service.description}
               </CardDescription>
