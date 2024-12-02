@@ -10,10 +10,8 @@ import {
   Ship,
   ChevronRight,
   LucideProps,
-  PersonStanding,
   Presentation,
   ArrowRight,
-  Shield,
   Anchor,
   Handshake,
 } from "lucide-react";

@@ -9,7 +9,7 @@ const Sidebar = (): JSX.Element => {
   return (
     <>
       <div
-        className={`fixed w-full h-full overflow-hidden justify-center bg-foreground text-white grid pt-[120px] left-0 z-10 transition-all duration-500 ease-in-out ${
+        className={`fixed w-full h-full overflow-hidden justify-center bg-foreground text-white grid pt-[120px] left-0 z-40 transition-all duration-500 ease-in-out ${
           isOpenSidebar ? "opacity-100 top-0" : "opacity-0 -top-full"
         }`}
       >
