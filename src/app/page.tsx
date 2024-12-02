@@ -3,7 +3,7 @@ import ServiceSection from "@/components/sections/servicesSection";
 
 export default function Home() {
   return (
-    <div className="pt-5">
+    <div className="pt-5 flex flex-col gap-5">
       <Hero />
       <ServiceSection />
       <section id="about">
