@@ -17,6 +17,7 @@ import {
   Anchor,
   Handshake,
 } from "lucide-react";
+import Link from "next/link";
 
 interface Service {
   title: string;
@@ -51,33 +52,35 @@ const ServiceSection: React.FC = async () => {
   return (
     <section id="services" className="px-4 md:px-10 xl:px-20 py-10">
       <h2 className="text-foreground text-4xl font-extrabold flex items-center mb-8">
-        <ChevronRight size={36} className="text-primary mr-2" />
+        <ChevronRight size={36} className="text-primary" />
         Servicios
       </h2>
       <main className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {services.map((service, index) => (
           <Card
             key={index}
-            className="relative flex flex-col items-center p-6 rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary"
+            className="relative flex flex-col rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-[1px] border-foreground"
           >
-            <CardHeader className="flex flex-col items-center">
+            <CardHeader className="flex flex-col">
               <service.icon className="w-12 h-12 text-primary" />
               <div className="h-[2px] w-12 bg-primary"></div>
-              <CardTitle className="text-xl font-semibold text-center">
+              <CardTitle className="text-xl font-semibold">
                 {service.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="h-20 text-center">
+            <CardContent className="flex flex-col gap-3 justify-start items-start">
               <CardDescription className="text-sm text-muted-foreground">
                 {service.description}
               </CardDescription>
+              <Link
+                href="#"
+                className="relative text-primary flex items-center gap-1 text-sm group"
+              >
+                Saber más
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <ArrowRight size={16} />
+              </Link>
             </CardContent>
-            <a
-              href="#"
-              className="bottom-4 text-primary flex items-center gap-1 text-sm hover:text-primary/80 transition-colors"
-            >
-              Saber más <ArrowRight size={16} />
-            </a>
           </Card>
         ))}
       </main>
