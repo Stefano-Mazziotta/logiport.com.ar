@@ -1,15 +1,13 @@
 import Hero from "@/components/hero";
+import AboutSection from "@/components/sections/aboutSection";
 import ServiceSection from "@/components/sections/servicesSection";
 
 export default function Home() {
   return (
-    <div className="pt-5 flex flex-col gap-5">
+    <div className="pt-5 flex flex-col gap-10 md:gap-32 lg:gap-64">
       <Hero />
       <ServiceSection />
-      <section id="about">
-        <h2>About Us</h2>
-        {/* Add content about your company here */}
-      </section>
+      <AboutSection />
       <section id="contact">
         <h2>Contact Us</h2>
         {/* Add contact form or information here */}

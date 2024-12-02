@@ -62,7 +62,7 @@ const ServiceSection: React.FC = async () => {
         {services.map((service, index) => (
           <Card
             key={index}
-            className="relative flex flex-col rounded-lg shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-2"
+            className="relative flex flex-col rounded-md shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-2 border-primary"
           >
             <CardHeader className="flex flex-col">
               <service.icon className="w-12 h-12 text-primary" />
