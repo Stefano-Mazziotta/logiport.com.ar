@@ -9,11 +9,11 @@ const Sidebar = (): JSX.Element => {
   return (
     <>
       <div
-        className={`fixed w-full h-full overflow-hidden justify-center bg-foreground text-white grid pt-[120px] left-0 z-40 transition-all duration-500 ease-in-out ${
-          isOpenSidebar ? "opacity-100 top-0" : "opacity-0 -top-full"
+        className={`fixed left-0 z-40 grid h-full w-full justify-center overflow-hidden bg-foreground pt-[120px] text-white transition-all duration-500 ease-in-out ${
+          isOpenSidebar ? "top-0 opacity-100" : "-top-full opacity-0"
         }`}
       >
-        <section className="flex flex-col gap-10 items-center text-2xl justify-between p-10">
+        <section className="flex flex-col items-center justify-between gap-10 p-10 text-2xl">
           <ul className="flex flex-col gap-3 text-center leading-relaxed">
             {ITEMS_NAVIGATION.map((item, index) => {
               return (

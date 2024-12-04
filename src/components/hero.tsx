@@ -15,17 +15,17 @@ const Hero: React.FC = async () => {
   return (
     <header className="flex flex-col gap-5">
       {/* Contenido */}
-      <section className="flex flex-col text-left px-2 md:px-10 xl:px-20">
+      <section className="flex flex-col px-2 text-left md:px-10 xl:px-20">
         {/* Título Principal */}
-        <h1 className="text-foreground text-4xl font-extrabold mb-4 md:text-6xl lg:text-7xl xl:text-8xl ">
+        <h1 className="mb-4 text-4xl font-extrabold text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
           {title}
           <span className="text-primary">puertos.</span>
         </h1>
 
         {/* Descripción secundaria con efecto de typing */}
-        <p className="text-lg text-primary md:text-xl lg:text-2xl mb-5">
+        <p className="mb-5 text-lg text-primary md:text-xl lg:text-2xl">
           <TypingEffect
-            className="max-w-[800px] inline-block text-foreground/80 font-base"
+            className="font-base inline-block max-w-[800px] text-foreground/80"
             fixedText="Tu aliado estratégico para lograr la mejor"
             texts={texts}
             dynamicTextClassName="text-primary font-base"
@@ -35,7 +35,7 @@ const Hero: React.FC = async () => {
         {/* Botón de acción */}
         <div>
           <Button
-            className="bg-foreground text-base text-secondary transition duration-300 py-3 px-6 shadow-md md:text-xl md:rounded-md hover:bg-primary"
+            className="bg-foreground px-6 py-3 text-base text-secondary shadow-md transition duration-300 hover:bg-primary md:rounded-md md:text-xl"
             size={"lg"}
           >
             Haz tu consulta ahora
@@ -43,8 +43,8 @@ const Hero: React.FC = async () => {
         </div>
       </section>
       <section className="md:px-10 xl:px-20">
-        <div className="h-[40vh] bg-hero-img bg-cover bg-center relative flex items-center justify-center md:shadow-xl md:rounded-md xl:h-[66vh]">
-          <div className="bg-black bg-opacity-40 absolute inset-0 rounded-md"></div>
+        <div className="relative flex h-[40vh] items-center justify-center bg-hero-img bg-cover bg-center md:rounded-md md:shadow-xl xl:h-[66vh]">
+          <div className="absolute inset-0 rounded-md bg-black bg-opacity-40"></div>
         </div>
       </section>
     </header>

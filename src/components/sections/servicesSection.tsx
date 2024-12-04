@@ -50,9 +50,9 @@ const ServiceSection: React.FC = async () => {
   return (
     <section
       id="services"
-      className="px-4 md:px-10 xl:px-20 pt-10 pb-20 bg-foreground"
+      className="bg-foreground px-4 pb-20 pt-10 md:px-10 xl:px-20"
     >
-      <h2 className="text-secondary text-4xl font-extrabold flex items-center mb-10">
+      <h2 className="mb-10 flex items-center text-4xl font-extrabold text-secondary">
         <ChevronRight size={36} className="text-primary" />
         Servicios
       </h2>
@@ -60,25 +60,25 @@ const ServiceSection: React.FC = async () => {
         {services.map((service, index) => (
           <Card
             key={index}
-            className="relative flex flex-col rounded-md shadow-lg bg-gradient-to-tr from-secondary to-primary/20 text-foreground transition-colors ease-linear duration-300 hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary border-solid border-2 border-primary"
+            className="relative flex flex-col rounded-md border-2 border-solid border-primary bg-gradient-to-tr from-secondary to-primary/20 text-foreground shadow-lg transition-colors duration-300 ease-linear hover:bg-gradient-to-bl hover:from-primary/40 hover:to-secondary"
           >
             <CardHeader className="flex flex-col">
-              <service.icon className="w-12 h-12 text-primary" />
+              <service.icon className="h-12 w-12 text-primary" />
               <div className="h-[2px] w-12 bg-primary"></div>
               <CardTitle className="text-xl font-semibold">
                 {service.title}
               </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-col gap-3 justify-start items-start">
+            <CardContent className="flex flex-col items-start justify-start gap-3">
               <CardDescription className="text-sm text-muted-foreground">
                 {service.description}
               </CardDescription>
               <Link
                 href="#"
-                className="relative text-primary flex items-center gap-1 text-sm group"
+                className="group relative flex items-center gap-1 text-sm text-primary"
               >
                 Saber más
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
                 <ArrowRight size={16} />
               </Link>
             </CardContent>
