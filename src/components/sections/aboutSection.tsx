@@ -36,7 +36,7 @@ export default function AboutSection() {
               </p>
             </div>
             <Button
-              className="mt-8 bg-white text-[#1a1332] hover:bg-gray-100"
+              className="mt-8 bg-secondary text-foreground hover:bg-primary hover:text-secondary"
               size="lg"
             >
               Contáctanos

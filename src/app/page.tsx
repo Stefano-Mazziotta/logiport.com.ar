@@ -1,5 +1,6 @@
 import Hero from "@/components/hero";
 import AboutSection from "@/components/sections/aboutSection";
+import ContactSection from "@/components/sections/contactSection";
 import ServiceSection from "@/components/sections/servicesSection";
 
 export default function Home() {
@@ -8,10 +9,7 @@ export default function Home() {
       <Hero />
       <ServiceSection />
       <AboutSection />
-      <section id="contact">
-        <h2>Contact Us</h2>
-        {/* Add contact form or information here */}
-      </section>
+      <ContactSection />
       <footer>{/* Add footer content here */}</footer>
     </div>
   );
