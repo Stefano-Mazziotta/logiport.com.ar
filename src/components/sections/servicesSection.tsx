@@ -1,19 +1,19 @@
 "use server";
 import {
   Card,
-  CardHeader,
-  CardTitle,
   CardContent,
   CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import {
-  Ship,
+  Anchor,
+  ArrowRight,
   ChevronRight,
+  Handshake,
   LucideProps,
   Presentation,
-  ArrowRight,
-  Anchor,
-  Handshake,
+  Ship,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -52,7 +52,7 @@ const ServiceSection: React.FC = async () => {
       id="services"
       className="bg-foreground px-4 pb-20 pt-10 md:px-10 xl:px-20"
     >
-      <h2 className="mb-10 flex items-center text-4xl font-extrabold text-secondary">
+      <h2 className="mb-10 flex items-center text-4xl font-extrabold text-secondary lg:text-6xl">
         <ChevronRight size={36} className="text-primary" />
         Servicios
       </h2>

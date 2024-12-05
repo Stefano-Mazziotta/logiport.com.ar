@@ -34,9 +34,9 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <section className="relative flex items-center justify-center py-32 text-secondary">
-      {/* Background Image */}
-      <div className="absolute inset-0">
+    <>
+      {/* Background Image Section */}
+      <section className="relative h-96">
         <Image
           src="/images/consultaria_maritima.jpg" // Change to the desired image
           alt="Barco en el puerto"
@@ -44,61 +44,63 @@ const ContactSection: React.FC = () => {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-foreground opacity-90"></div>
-      </div>
+      </section>
 
-      {/* Text and Form */}
-      <div className="container relative flex flex-col justify-center rounded-md bg-foreground p-12 shadow-lg md:w-1/2">
-        <h2 className="flex items-center text-2xl font-extrabold md:text-4xl">
-          <ChevronRight size={36} className="text-primary" />
-          Contáctanos
-        </h2>
+      {/* Contact Form Section */}
+      <section className="relative flex items-center justify-center px-4 text-secondary">
+        <div className="container relative flex flex-col justify-center gap-8 rounded-md bg-foreground p-8 shadow-lg md:w-1/2">
+          <h2 className="flex items-center text-2xl font-extrabold md:text-4xl lg:text-6xl">
+            <ChevronRight size={36} className="text-primary" />
+            Contáctanos
+          </h2>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="name">Nombre</Label>
-            <Input
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Tu nombre"
-              className="bg-gray-700 text-white"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Correo electrónico</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Tu correo electrónico"
-              className="bg-gray-700 text-white"
-            />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">Mensaje</Label>
-            <Textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Tu mensaje"
-              className="bg-gray-700 text-white"
-              rows={4}
-            />
-          </div>
-          <Button
-            type="submit"
-            className="bg-secondary text-foreground hover:bg-primary hover:text-secondary"
-          >
-            Enviar
-          </Button>
-        </form>
-      </div>
-    </section>
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Nombre</Label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Nombre completo o Empresa"
+                className="bg-secondary text-foreground"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="email">Correo electrónico</Label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="ejemplo@ejemplo.com"
+                className="bg-secondary text-foreground"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="message">Mensaje</Label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Me gustaría consultar sobre..."
+                className="bg-secondary text-foreground"
+                rows={4}
+              />
+            </div>
+            <Button
+              type="submit"
+              className="w-full bg-secondary text-foreground hover:bg-primary hover:text-secondary"
+            >
+              Enviar
+            </Button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -18,7 +18,7 @@ export default function AboutSection() {
         </div>
         <div className="relative">
           <div className="z-20 rounded-md bg-foreground p-8 text-secondary shadow-2xl lg:absolute lg:-left-24 lg:top-1/2 lg:w-[120%] lg:-translate-y-1/2">
-            <h2 className="mb-6 flex items-center text-2xl font-extrabold md:text-4xl">
+            <h2 className="mb-6 flex items-center text-2xl font-extrabold md:text-4xl lg:text-6xl">
               <ChevronRight size={36} className="text-primary" />
               Sobre nosotros
             </h2>
