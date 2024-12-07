@@ -14,7 +14,7 @@ const navItems: NavItem[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-b border-t-[1px] border-foreground">
+    <footer className="w-full border-b border-t-[1px] border-foreground bg-foreground">
       <div className="container mx-auto px-4">
         {/* Top bar */}
         <div className="flex items-center justify-between py-2 text-sm text-muted-foreground">

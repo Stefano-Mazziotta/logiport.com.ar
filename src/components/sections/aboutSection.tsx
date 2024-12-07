@@ -23,7 +23,7 @@ export default function AboutSection() {
               <ChevronRight size={24} className="text-primary" />
               Sobre nosotros
             </h2>
-            <div className="space-y-4">
+            <div className="space-y-4 text-muted-foreground">
               <p>
                 LOGIPORT S.R.L. fundada en junio de 2018 y registrada ante
                 Prefectura Naval Argentina, responde a la necesidad de asesorar

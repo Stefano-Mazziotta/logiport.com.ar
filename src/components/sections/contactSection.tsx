@@ -31,15 +31,14 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-
-interface FormData {
-  name: string;
-  email: string;
-  message: string;
-  phone: string;
-  consultationReason: string;
-}
-
+import { Separator } from "../ui/separator";
+/**
+ *
+ * https://medium.com/@jedpatterson/adding-cloudflare-turnstile-to-a-next-js-app-78121bf4d7e3
+ * https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
+ * https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/
+ * cloudflare turnstile
+ */
 const consultationReasons = [
   { label: "Consultoría Marítima", value: "consultoria_maritima" },
   { label: "Consultoría Portuaria", value: "consultoria_portuaria" },
@@ -100,25 +99,24 @@ const ContactSection: React.FC = () => {
           layout="fill"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-foreground opacity-90"></div>
+        <div className="absolute inset-0 bg-foreground opacity-70"></div>
       </section>
 
       {/* Contact Form Section */}
       <section
         id="contact"
-        className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-secondary"
+        className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-foreground"
       >
-        <div className="flex w-full flex-col rounded-t-md bg-foreground p-8 shadow-lg md:w-[80%] lg:w-[40%]">
+        <div className="flex w-full flex-col rounded-t-md p-8 md:w-[80%] lg:w-[40%]">
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center text-3xl font-extrabold md:text-4xl lg:text-7xl">
               <ChevronRight size={24} className="text-primary" />
               Contáctanos
             </h2>
-            <p className="text-sm text-muted-foreground">
-              Estamos aquí para ayudarte con todas tus necesidades de gestión
-              portuaria. Completa el formulario y nos pondremos en contacto
-              contigo pronto.
+            <p className="text-muted-foreground">
+              Completá el formulario y nos pondremos en contacto contigo pronto.
             </p>
+            <Separator className="bg-muted-foreground" />
           </div>
           {isSubmitted ? (
             <div className="mt-8 rounded-lg bg-green-100 p-6 text-green-700">
@@ -142,13 +140,14 @@ const ContactSection: React.FC = () => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">Nombre</FormLabel>
+                        <FormLabel className="text-base">Nombre</FormLabel>
                         <FormControl>
                           <div className="relative">
-                            <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
                             <Input
                               placeholder="Nombre completo o Empresa"
-                              className="pl-10"
+                              className="border-foreground pl-10"
+                              autoComplete="off"
                               {...field}
                             />
                           </div>
@@ -162,15 +161,16 @@ const ContactSection: React.FC = () => {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">
+                        <FormLabel className="text-base">
                           Correo electrónico
                         </FormLabel>
                         <FormControl>
                           <div className="relative">
-                            <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
                             <Input
                               placeholder="ejemplo@ejemplo.com"
-                              className="pl-10"
+                              className="border-foreground pl-10"
+                              autoComplete="off"
                               {...field}
                             />
                           </div>
@@ -186,15 +186,16 @@ const ContactSection: React.FC = () => {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">
+                        <FormLabel className="text-base">
                           Número de celular
                         </FormLabel>
                         <FormControl>
                           <div className="relative">
-                            <Phone className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <Phone className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
                             <Input
                               placeholder="+54 341 1234567"
-                              className="pl-10"
+                              className="border-foreground pl-10"
+                              autoComplete="off"
                               {...field}
                             />
                           </div>
@@ -208,7 +209,7 @@ const ContactSection: React.FC = () => {
                     name="consultationReason"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-white">
+                        <FormLabel className="text-base">
                           Razón de consulta
                         </FormLabel>
                         <Select
@@ -217,8 +218,8 @@ const ContactSection: React.FC = () => {
                         >
                           <FormControl>
                             <div className="relative">
-                              <Anchor className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
-                              <SelectTrigger className="pl-10">
+                              <Anchor className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" />
+                              <SelectTrigger className="border-foreground pl-10">
                                 <SelectValue placeholder="Seleccionar razón de consulta" />
                               </SelectTrigger>
                             </div>
@@ -244,13 +245,13 @@ const ContactSection: React.FC = () => {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-white">Mensaje</FormLabel>
+                      <FormLabel className="text-base">Mensaje</FormLabel>
                       <FormControl>
                         <div className="relative">
-                          <MessageCircle className="absolute left-3 top-3 h-5 w-5 text-gray-300" />
+                          <MessageCircle className="absolute left-3 top-3 h-5 w-5 text-primary" />
                           <Textarea
                             placeholder="Me gustaría consultar sobre..."
-                            className="min-h-[100px] pl-10"
+                            className="min-h-[100px] border-foreground pl-10"
                             {...field}
                           />
                         </div>
@@ -261,7 +262,7 @@ const ContactSection: React.FC = () => {
                 />
                 <Button
                   type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600"
+                  className="w-full bg-foreground hover:bg-primary"
                 >
                   Enviar
                 </Button>
