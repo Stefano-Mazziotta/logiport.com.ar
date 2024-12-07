@@ -1,5 +1,4 @@
 import { Anchor, Mail, Phone } from "lucide-react";
-import Link from "next/link";
 
 interface NavItem {
   href: string;
@@ -35,27 +34,11 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Main navbar */}
-        <nav className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <Anchor className="h-8 w-8" />
-            <span className="text-2xl font-bold">LOGIPORT</span>
-          </div>
-          <ul className="hidden md:flex md:items-center md:gap-6">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className="text-lg font-medium transition-colors hover:text-primary"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <button className="rounded bg-primary px-4 py-2 text-white transition-colors hover:bg-primary/90">
-            Cotizar
-          </button>
-        </nav>
+
+        <div className="flex items-center gap-2">
+          <Anchor className="h-8 w-8" />
+          <span className="text-2xl font-bold">LOGIPORT</span>
+        </div>
       </div>
     </footer>
   );

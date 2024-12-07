@@ -2,6 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -11,13 +18,45 @@ interface FormData {
   name: string;
   email: string;
   message: string;
+  phone: string;
+  consultationReason: string;
 }
+
+const consultationReasons = [
+  {
+    label: "Consultoría Marítima",
+    value: "consultoria_maritima",
+  },
+  {
+    label: "Consultoría Portuaria",
+    value: "consultoria_portuaria",
+  },
+  {
+    label: "Consultoría de Seguridad",
+    value: "consultoria_seguridad",
+  },
+  {
+    label: "Consultoría de Logística",
+    value: "consultoria_logistica",
+  },
+  {
+    label: "Consultoría de Protección",
+    value: "consultoria_proteccion",
+  },
+
+  {
+    label: "Capacitación",
+    value: "consultoria_capacitacion",
+  },
+];
 
 const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
+    phone: "",
+    consultationReason: "",
   });
 
   const handleChange = (
@@ -34,7 +73,7 @@ const ContactSection: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col">
       {/* Background Image Section */}
       <section className="relative h-96">
         <Image
@@ -47,15 +86,13 @@ const ContactSection: React.FC = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative flex items-center justify-center px-4 text-secondary">
-        <div className="container relative flex flex-col justify-center gap-8 rounded-md bg-foreground p-8 shadow-lg md:w-1/2">
-          <h2 className="flex items-center text-2xl font-extrabold md:text-4xl lg:text-6xl">
+      <section className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-secondary">
+        <div className="flex w-full flex-col gap-16 rounded-t-md bg-foreground p-8 shadow-lg md:w-[80%] lg:w-[60%]">
+          <h2 className="flex items-center text-3xl font-extrabold md:text-4xl lg:text-7xl">
             <ChevronRight size={36} className="text-primary" />
             Contáctanos
           </h2>
-
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="name">Nombre</Label>
               <Input
@@ -80,6 +117,32 @@ const ContactSection: React.FC = () => {
               />
             </div>
             <div className="space-y-2">
+              <Label htmlFor="consultation-reason">Razón de consulta</Label>
+              <Select>
+                <SelectTrigger className="bg-secondary text-muted-foreground">
+                  <SelectValue placeholder="Seleccionar razón de consulta" />
+                </SelectTrigger>
+                <SelectContent>
+                  {consultationReasons.map((reason) => (
+                    <SelectItem key={reason.value} value={reason.value}>
+                      {reason.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Número de celular</Label>
+              <Input
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Por ejemplo, +54 341 1234567"
+                className="bg-secondary text-foreground"
+              />
+            </div>
+            <div className="space-y-2">
               <Label htmlFor="message">Mensaje</Label>
               <Textarea
                 id="message"
@@ -93,14 +156,14 @@ const ContactSection: React.FC = () => {
             </div>
             <Button
               type="submit"
-              className="w-full bg-secondary text-foreground hover:bg-primary hover:text-secondary"
+              className="hover: w-full bg-primary text-secondary hover:bg-blue-500"
             >
               Enviar
             </Button>
           </form>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
