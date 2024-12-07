@@ -107,7 +107,7 @@ const ContactSection: React.FC = () => {
         id="contact"
         className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-foreground"
       >
-        <div className="flex w-full flex-col rounded-t-md p-8 md:w-[80%] lg:w-[40%]">
+        <div className="flex w-full flex-col rounded-t-md p-4 md:w-[80%] lg:w-[40%]">
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center text-3xl font-extrabold md:text-4xl lg:text-7xl">
               <ChevronRight size={24} className="text-primary" />
