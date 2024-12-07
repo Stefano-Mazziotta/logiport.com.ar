@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import TypingEffect from "./typingEffect";
 import { Button } from "./ui/button";
@@ -34,12 +35,14 @@ const Hero: React.FC = async () => {
 
         {/* Botón de acción */}
         <div>
-          <Button
-            className="bg-foreground px-6 py-3 text-base text-secondary shadow-md transition duration-300 hover:bg-primary md:rounded-md md:text-xl"
-            size={"lg"}
-          >
-            Haz tu consulta ahora
-          </Button>
+          <Link href={"#contact"}>
+            <Button
+              className="bg-foreground px-6 py-3 text-base text-secondary shadow-md transition duration-300 hover:bg-primary md:rounded-md md:text-xl"
+              size={"lg"}
+            >
+              Haz tu consulta ahora
+            </Button>
+          </Link>
         </div>
       </section>
       <section className="md:px-10 xl:px-20">

@@ -53,7 +53,7 @@ const ServiceSection: React.FC = async () => {
       className="bg-foreground px-4 pb-20 pt-10 md:px-10 xl:px-20"
     >
       <h2 className="mb-10 flex items-center text-4xl font-extrabold text-secondary lg:text-6xl">
-        <ChevronRight size={36} className="text-primary" />
+        <ChevronRight size={24} className="text-primary" />
         Servicios
       </h2>
       <main className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -74,7 +74,7 @@ const ServiceSection: React.FC = async () => {
                 {service.description}
               </CardDescription>
               <Link
-                href="#"
+                href="#contact"
                 className="group relative flex items-center gap-1 text-sm text-primary"
               >
                 Saber más

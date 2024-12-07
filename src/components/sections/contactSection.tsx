@@ -11,7 +11,14 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Anchor, Mail, MessageCircle, Phone, User } from "lucide-react";
+import {
+  Anchor,
+  ChevronRight,
+  Mail,
+  MessageCircle,
+  Phone,
+  User,
+} from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -97,11 +104,14 @@ const ContactSection: React.FC = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-secondary">
+      <section
+        id="contact"
+        className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-secondary"
+      >
         <div className="flex w-full flex-col rounded-t-md bg-foreground p-8 shadow-lg md:w-[80%] lg:w-[60%]">
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center text-3xl font-extrabold md:text-4xl lg:text-7xl">
-              {/* <ChevronRight size={36} className="text-primary" /> */}
+              <ChevronRight size={24} className="text-primary" />
               Contáctanos
             </h2>
             <p className="text-sm text-muted-foreground">

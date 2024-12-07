@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -19,7 +20,7 @@ export default function AboutSection() {
         <div className="relative">
           <div className="z-20 rounded-md bg-foreground p-8 text-secondary shadow-2xl lg:absolute lg:-left-24 lg:top-1/2 lg:w-[120%] lg:-translate-y-1/2">
             <h2 className="mb-6 flex items-center text-2xl font-extrabold md:text-4xl lg:text-6xl">
-              <ChevronRight size={36} className="text-primary" />
+              <ChevronRight size={24} className="text-primary" />
               Sobre nosotros
             </h2>
             <div className="space-y-4">
@@ -35,12 +36,14 @@ export default function AboutSection() {
                 instalaciones portuarias.
               </p>
             </div>
-            <Button
-              className="mt-8 bg-secondary text-foreground hover:bg-primary hover:text-secondary"
-              size="lg"
-            >
-              Contáctanos
-            </Button>
+            <Link href="#contact">
+              <Button
+                className="mt-8 bg-secondary text-foreground hover:bg-primary hover:text-secondary"
+                size="lg"
+              >
+                Contáctanos
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
