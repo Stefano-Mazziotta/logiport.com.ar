@@ -108,7 +108,7 @@ const ContactSection: React.FC = () => {
         id="contact"
         className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-secondary"
       >
-        <div className="flex w-full flex-col rounded-t-md bg-foreground p-8 shadow-lg md:w-[80%] lg:w-[60%]">
+        <div className="flex w-full flex-col rounded-t-md bg-foreground p-8 shadow-lg md:w-[80%] lg:w-[40%]">
           <div className="flex flex-col gap-4">
             <h2 className="flex items-center text-3xl font-extrabold md:text-4xl lg:text-7xl">
               <ChevronRight size={24} className="text-primary" />
@@ -136,102 +136,109 @@ const ContactSection: React.FC = () => {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="mt-8 space-y-6"
               >
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">Nombre</FormLabel>
-                      <FormControl>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
-                          <Input
-                            placeholder="Nombre completo o Empresa"
-                            className="pl-10"
-                            {...field}
-                          />
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">
-                        Correo electrónico
-                      </FormLabel>
-                      <FormControl>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
-                          <Input
-                            placeholder="ejemplo@ejemplo.com"
-                            className="pl-10"
-                            {...field}
-                          />
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">
-                        Número de celular
-                      </FormLabel>
-                      <FormControl>
-                        <div className="relative">
-                          <Phone className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
-                          <Input
-                            placeholder="+54 341 1234567"
-                            className="pl-10"
-                            {...field}
-                          />
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                <FormField
-                  control={form.control}
-                  name="consultationReason"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-white">
-                        Razón de consulta
-                      </FormLabel>
-                      <Select
-                        onValueChange={field.onChange}
-                        defaultValue={field.value}
-                      >
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">Nombre</FormLabel>
                         <FormControl>
                           <div className="relative">
-                            <Anchor className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
-                            <SelectTrigger className="pl-10">
-                              <SelectValue placeholder="Seleccionar razón de consulta" />
-                            </SelectTrigger>
+                            <User className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <Input
+                              placeholder="Nombre completo o Empresa"
+                              className="pl-10"
+                              {...field}
+                            />
                           </div>
                         </FormControl>
-                        <SelectContent>
-                          {consultationReasons.map((reason) => (
-                            <SelectItem key={reason.value} value={reason.value}>
-                              {reason.label}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">
+                          Correo electrónico
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Mail className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <Input
+                              placeholder="ejemplo@ejemplo.com"
+                              className="pl-10"
+                              {...field}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  <FormField
+                    control={form.control}
+                    name="phone"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">
+                          Número de celular
+                        </FormLabel>
+                        <FormControl>
+                          <div className="relative">
+                            <Phone className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                            <Input
+                              placeholder="+54 341 1234567"
+                              className="pl-10"
+                              {...field}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="consultationReason"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-white">
+                          Razón de consulta
+                        </FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <div className="relative">
+                              <Anchor className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-300" />
+                              <SelectTrigger className="pl-10">
+                                <SelectValue placeholder="Seleccionar razón de consulta" />
+                              </SelectTrigger>
+                            </div>
+                          </FormControl>
+                          <SelectContent>
+                            {consultationReasons.map((reason) => (
+                              <SelectItem
+                                key={reason.value}
+                                value={reason.value}
+                              >
+                                {reason.label}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
                 <FormField
                   control={form.control}
                   name="message"
