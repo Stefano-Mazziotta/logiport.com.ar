@@ -11,7 +11,7 @@ export default function Home() {
         <Hero />
         <ServiceSection />
         <AboutSection />
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-4">
           <ContactSection />
           <Footer />
         </div>
