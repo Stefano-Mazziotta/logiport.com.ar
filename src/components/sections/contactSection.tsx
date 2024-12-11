@@ -105,7 +105,7 @@ const ContactSection: React.FC = () => {
       {/* Contact Form Section */}
       <section
         id="contact"
-        className="relative flex flex-col items-center justify-center bg-secondary px-4 pt-3 text-foreground"
+        className="justify-centerpx-4 relative flex flex-col items-center bg-secondary pt-3 text-foreground"
       >
         <div className="flex w-full flex-col rounded-t-md p-4 md:w-[80%] lg:w-[40%]">
           <div className="flex flex-col gap-4">

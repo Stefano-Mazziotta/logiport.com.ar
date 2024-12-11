@@ -1,5 +1,3 @@
-import { Anchor, Mail, Phone } from "lucide-react";
-
 interface NavItem {
   href: string;
   label: string;
@@ -14,31 +12,9 @@ const navItems: NavItem[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full border-b border-t-[1px] border-foreground bg-foreground">
-      <div className="container mx-auto px-4">
-        {/* Top bar */}
-        <div className="flex items-center justify-between py-2 text-sm text-muted-foreground">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-2">
-              <Phone className="h-4 w-4" />
-              <span>+1 234 567 890</span>
-            </span>
-            <span className="flex items-center gap-2">
-              <Mail className="h-4 w-4" />
-              <span>info@logiport.com</span>
-            </span>
-          </div>
-          <div className="hidden md:block">
-            Horario: Lun - Vie: 9:00 AM - 6:00 PM
-          </div>
-        </div>
-
-        {/* Main navbar */}
-
-        <div className="flex items-center gap-2">
-          <Anchor className="h-8 w-8" />
-          <span className="text-2xl font-bold">LOGIPORT</span>
-        </div>
+    <footer className="w-full border-t border-foreground bg-foreground py-4">
+      <div className="container mx-auto text-center text-sm text-muted-foreground">
+        <span>Derechos reservados Logiport 2024</span>
       </div>
     </footer>
   );
