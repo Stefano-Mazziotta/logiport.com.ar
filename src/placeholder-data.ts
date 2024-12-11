@@ -1,6 +1,6 @@
-export const HOME_LINKS = [
-  { href: "/", text: "Home" },
-  { href: "#services", text: "Services" },
-  { href: "#about", text: "About Us" },
-  { href: "#contact", text: "Contact Us" },
+export const ITEMS_NAVIGATION = [
+  { href: "/", text: "Inicio" },
+  { href: "#services", text: "Servicios" },
+  { href: "#about", text: "Sobre nosotros" },
+  { href: "#contact", text: "Contáctanos" },
 ];
