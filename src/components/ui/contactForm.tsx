@@ -255,7 +255,7 @@ const ContactForm: React.FC = () => {
           )}
         />
         <Turnstile
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          siteKey={process.env.TURNSTILE_SITE_KEY!}
           retry="auto"
           refreshExpired="auto"
           sandbox={process.env.NODE_ENV === "development"}
