@@ -35,6 +35,9 @@ dependencies:
   next:
     specifier: 15.0.2
     version: 15.0.2(react-dom@18.3.1)(react@18.3.1)
+  next-turnstile:
+    specifier: ^1.0.0
+    version: 1.0.0(next@15.0.2)(react-dom@18.3.1)(react@18.3.1)
   pnpm:
     specifier: ^9.12.3
     version: 9.12.3
@@ -53,6 +56,9 @@ dependencies:
   tailwindcss-animate:
     specifier: ^1.0.7
     version: 1.0.7(tailwindcss@3.4.14)
+  uuid:
+    specifier: ^11.0.3
+    version: 11.0.3
   zod:
     specifier: ^3.23.8
     version: 3.23.8
@@ -2732,6 +2738,18 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-turnstile@1.0.0(next@15.0.2)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-cc7R68yE14LC9Ajyy6+dQrkVDBjYZhE81UC142IqVNs5kflkkLYZAnLKJff2pBJnrkveTqP9h9uIs8AeqjCvZA==}
+    peerDependencies:
+      next: '>=12'
+      react: '>=16'
+      react-dom: '>=16'
+    dependencies:
+      next: 15.0.2(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /next@15.0.2(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-rxIWHcAu4gGSDmwsELXacqAPUk+j8dV/A9cDF5fsiCMpkBDYkO2AEaL1dfD+nNmDiU6QMCFN8Q30VEKapT9UHQ==}
     engines: {node: '>=18.18.0'}
@@ -3706,6 +3724,11 @@ packages:
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+
+  /uuid@11.0.3:
+    resolution: {integrity: sha512-d0z310fCWv5dJwnX1Y/MncBAqGMKEzlBb1AOf7z9K8ALnd0utBX/msg/fA0+sbyN1ihbMsLhrBlnl1ak7Wa0rg==}
+    hasBin: true
+    dev: false
 
   /which-boxed-primitive@1.0.2:
     resolution: {integrity: sha512-bwZdv0AKLpplFY2KZRX6TvyuN7ojjr7lwkg6ml0roIy9YeuSr7JS372qlNW18UQYzgYK9ziGcerWqZOmEn9VNg==}
