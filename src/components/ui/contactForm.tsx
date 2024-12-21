@@ -252,11 +252,12 @@ const ContactForm: React.FC = () => {
             </FormItem>
           )}
         />
+
         <div
-          className="cf-turnstile"
+          className="cf-turnstile flex justify-center"
           data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
           data-callback="javascriptCallback"
-          data-theme="light"
+          data-theme="dark"
           data-language="es"
         ></div>
         {error && (
