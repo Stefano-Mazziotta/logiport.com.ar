@@ -18,8 +18,6 @@ import { toast } from "@/hooks/use-toast";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { Turnstile } from "next-turnstile";
-
 import { useForm } from "react-hook-form";
 
 import {
@@ -254,28 +252,13 @@ const ContactForm: React.FC = () => {
             </FormItem>
           )}
         />
-        <Turnstile
-          siteKey={process.env.TURNSTILE_SITE_KEY!}
-          retry="auto"
-          refreshExpired="auto"
-          sandbox={process.env.NODE_ENV === "development"}
-          onError={() => {
-            setTurnstileStatus("error");
-            setError("Security check failed. Please try again.");
-          }}
-          onExpire={() => {
-            setTurnstileStatus("expired");
-            setError("Security check expired. Please verify again.");
-          }}
-          onLoad={() => {
-            setTurnstileStatus("required");
-            setError(null);
-          }}
-          onVerify={(token) => {
-            setTurnstileStatus("success");
-            setError(null);
-          }}
-        />
+        <div
+          className="cf-turnstile"
+          data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
+          data-callback="javascriptCallback"
+          data-theme="light"
+          data-language="es"
+        ></div>
         {error && (
           <div
             className="mb-2 flex items-center gap-2 text-sm text-red-500"
