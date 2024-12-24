@@ -20,6 +20,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useForm } from "react-hook-form";
 
+import { CONSULTATION_REASONS } from "@/placeholder-data";
+import { APIResponse } from "@/types/api";
 import {
   AlertCircle,
   Anchor,
@@ -44,26 +46,54 @@ import {
  * https://developers.cloudflare.com/turnstile/get-started/client-side-rendering/
  * cloudflare turnstile
  */
-const consultationReasons = [
-  { label: "Consultoría Marítima", value: "consultoria_maritima" },
-  { label: "Consultoría Portuaria", value: "consultoria_portuaria" },
-  { label: "Consultoría de Seguridad", value: "consultoria_seguridad" },
-  { label: "Consultoría de Logística", value: "consultoria_logistica" },
-  { label: "Consultoría de Protección", value: "consultoria_proteccion" },
-  { label: "Capacitación", value: "consultoria_capacitacion" },
-  { label: "Otro", value: "consultoria_otro" },
-];
+
+enum TurnstileStatus {
+  Success = "success",
+  Error = "error",
+  Expired = "expired",
+  Required = "required",
+}
+
+async function validateTurnstile(token: string) {
+  const response = await fetch("/api/turnstile/validate", {
+    method: "POST",
+    body: JSON.stringify({ token }),
+  });
+
+  if (!response.ok || response.status !== 200) {
+    return false;
+  }
+
+  const data = (await response.json()) as APIResponse;
+
+  return data.success;
+}
+
+async function sendNotification(formData: z.infer<typeof contactFormSchema>) {
+  const response = await fetch("/api/notification/send", {
+    method: "POST",
+    body: JSON.stringify(formData),
+  });
+
+  if (!response.ok || response.status !== 200) {
+    return false;
+  }
+
+  const data = (await response.json()) as APIResponse;
+
+  return data.success;
+}
 
 const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   //   const router = useRouter();
-  const turnstileRef = useRef<string>();
+
   const formRef = useRef<HTMLFormElement>(null);
-  const [turnstileStatus, setTurnstileStatus] = useState<
-    "success" | "error" | "expired" | "required"
-  >("required");
+  const [turnstileStatus, setTurnstileStatus] = useState<TurnstileStatus>(
+    TurnstileStatus.Required,
+  );
 
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
@@ -73,7 +103,6 @@ const ContactForm: React.FC = () => {
       phone: "",
       consultationReason: "",
       message: "",
-      cfTurnstileResponse: "",
     },
   });
 
@@ -86,27 +115,27 @@ const ContactForm: React.FC = () => {
       return;
     }
 
-    if (turnstileStatus !== "success") {
-      console.log("turnstileStatus is not success");
-      setError("Please verify you are not a robot");
+    const contactFormData = new FormData(formRef.current);
+    const token = contactFormData.get("cf-turnstile-response");
+
+    if (!token) {
+      setError("Por favor, debes verificar que eres humano.");
       setIsLoading(false);
       return;
     }
 
-    const contactFormData = new FormData(formRef.current);
-    const token = contactFormData.get("cf-turnstile-response");
-
-    formData.cfTurnstileResponse = token ? (token as string) : "";
-
     try {
-      const response = await fetch("/api/contactNotification", {
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      // validate token
+      const isTurnstileValid = await validateTurnstile(token.toString());
 
-      if (!response.ok || response.status !== 200) {
-        throw new Error("Failed to send contact notification");
+      if (!isTurnstileValid) {
+        setError("Failed to validate turnstile");
+        setIsLoading(false);
+        return;
       }
+
+      // send notification to the admin email
+      const notificationResponse = await sendNotification(formData);
 
       setIsSubmitted(true);
       toast({
@@ -219,7 +248,7 @@ const ContactForm: React.FC = () => {
                     </div>
                   </FormControl>
                   <SelectContent>
-                    {consultationReasons.map((reason) => (
+                    {CONSULTATION_REASONS.map((reason) => (
                       <SelectItem key={reason.value} value={reason.value}>
                         {reason.label}
                       </SelectItem>
@@ -253,13 +282,30 @@ const ContactForm: React.FC = () => {
           )}
         />
 
-        <div
-          className="cf-turnstile flex justify-center"
-          data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
-          data-callback="javascriptCallback"
-          data-theme="dark"
-          data-language="es"
-        ></div>
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className="text-base">
+                Confirme que es humano
+              </FormLabel>
+              <FormControl>
+                <div
+                  className="cf-turnstile"
+                  data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
+                  // data-sitekey="1x00000000000000000000AA"
+                  data-callback="javascriptCallback"
+                  data-theme="dark"
+                  data-language="es"
+                  data-size="flexible"
+                  {...field}
+                ></div>
+              </FormControl>
+            </FormItem>
+          )}
+        />
+
         {error && (
           <div
             className="mb-2 flex items-center gap-2 text-sm text-red-500"

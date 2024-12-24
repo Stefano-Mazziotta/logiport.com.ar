@@ -4,18 +4,9 @@ import { NextRequest, NextResponse } from "next/server";
 import * as z from "zod";
 
 export async function POST(req: NextRequest) {
-  const {
-    consultationReason,
-    name,
-    phone,
-    cfTurnstileResponse: token,
-    email,
-    message,
-  } = (await req.json()) as z.infer<typeof contactFormSchema>;
+  const { consultationReason, name, phone, email, message } =
+    (await req.json()) as z.infer<typeof contactFormSchema>;
 
-  if (true) {
-    return NextResponse.json({ message: "Invalid token" }, { status: 400 });
-  }
   // send notification to the admin email
   // const transporter = nodemailer.createTransport({
   //   service: "gmail",
@@ -41,5 +32,9 @@ export async function POST(req: NextRequest) {
   //   );
   // }
 
-  return NextResponse.json({ message: "Login successful" });
+  return NextResponse.json({
+    data: { consultationReason, name, phone, email, message },
+    message: "Email sent successfully",
+    success: true,
+  });
 }

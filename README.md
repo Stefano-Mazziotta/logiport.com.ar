@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# turnstile
+
+## Client tokens
+
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA # always passes
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=2x00000000000000000000AB # Always Blocks
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=3x00000000000000000000FF # Forces interactive challenge
+
+## Secret tokens
+
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA # Always passes
+TURNSTILE_SECRET_KEY=2x0000000000000000000000000000000AA # Always fails
+TURNSTILE_SECRET_KEY=3x0000000000000000000000000000000AA # Yields a “token already spent” error

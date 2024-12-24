@@ -16,5 +16,4 @@ export const contactFormSchema = z.object({
   message: z.string().min(10, {
     message: "El mensaje debe tener al menos 10 caracteres.",
   }),
-  cfTurnstileResponse: z.string(),
 });
