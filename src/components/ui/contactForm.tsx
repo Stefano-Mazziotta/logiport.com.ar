@@ -315,8 +315,18 @@ const ContactForm: React.FC = () => {
             <span>{error}</span>
           </div>
         )}
-        <Button type="submit" className="w-full bg-foreground hover:bg-primary">
-          Enviar
+        <Button
+          type="submit"
+          className="w-full bg-foreground hover:bg-primary"
+          disabled={isLoading}
+        >
+          {isLoading && (
+            <svg
+              className="mr-3 h-5 w-5 animate-spin"
+              viewBox="0 0 24 24"
+            ></svg>
+          )}
+          {isLoading ? "Enviando..." : "Enviar"}
         </Button>
       </form>
     </Form>
