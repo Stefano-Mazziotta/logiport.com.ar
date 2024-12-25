@@ -293,8 +293,8 @@ const ContactForm: React.FC = () => {
               <FormControl>
                 <div
                   className="cf-turnstile"
-                  data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
-                  // data-sitekey="1x00000000000000000000AA"
+                  // data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
+                  data-sitekey="1x00000000000000000000AA"
                   data-callback="javascriptCallback"
                   data-theme="dark"
                   data-language="es"
@@ -322,7 +322,7 @@ const ContactForm: React.FC = () => {
         >
           {isLoading && (
             <svg
-              className="mr-3 h-5 w-5 animate-spin"
+              className="h-5 w-5 animate-spin fill-secondary"
               viewBox="0 0 24 24"
             ></svg>
           )}
