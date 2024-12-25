@@ -25,6 +25,7 @@ import { APIResponse } from "@/types/api";
 import {
   AlertCircle,
   Anchor,
+  LoaderCircle,
   Mail,
   MessageCircle,
   Phone,
@@ -320,12 +321,7 @@ const ContactForm: React.FC = () => {
           className="w-full bg-foreground hover:bg-primary"
           disabled={isLoading}
         >
-          {isLoading && (
-            <svg
-              className="h-5 w-5 animate-spin fill-secondary"
-              viewBox="0 0 24 24"
-            ></svg>
-          )}
+          {isLoading && <LoaderCircle className="animate-spin bg-secondary" />}
           {isLoading ? "Enviando..." : "Enviar"}
         </Button>
       </form>
