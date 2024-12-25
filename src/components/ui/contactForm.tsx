@@ -321,7 +321,9 @@ const ContactForm: React.FC = () => {
           className="w-full bg-foreground hover:bg-primary"
           disabled={isLoading}
         >
-          {isLoading && <LoaderCircle className="animate-spin bg-secondary" />}
+          {isLoading && (
+            <LoaderCircle className="animate-spin text-secondary" />
+          )}
           {isLoading ? "Enviando..." : "Enviar"}
         </Button>
       </form>
