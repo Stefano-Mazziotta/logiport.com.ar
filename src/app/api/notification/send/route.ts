@@ -27,8 +27,18 @@ export async function POST(req: NextRequest) {
   const mailOptions = {
     from: process.env.ZOHO_EMAIL,
     to: process.env.ADMIN_EMAIL,
-    subject: "New Contact Form Submission",
-    text: `You have a new contact form submission from ${name} (${email}).\n\nReason: ${consultationReason}\nPhone: ${phone}\nMessage: ${message}`,
+    subject: "Logiport.com.ar - Nueva consulta!",
+    html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6;">
+          <h2 style="color: #333;">Logiport.com.ar - Nueva consulta!</h2>
+          <p><strong>Nombre:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Celular:</strong> ${phone}</p>
+          <p><strong>Razón de consulta:</strong> ${consultationReason}</p>
+          <p><strong>Mensaje:</strong></p>
+          <p style="background-color: #f9f9f9; padding: 10px; border: 1px solid #ddd;">${message}</p>
+        </div>
+      `,
   };
 
   try {
