@@ -8,11 +8,6 @@ export async function POST(req: NextRequest) {
   const { consultationReason, name, phone, email, message } =
     (await req.json()) as z.infer<typeof contactFormSchema>;
 
-  // Verificar las variables de entorno
-  console.log("ZOHO_EMAIL:", process.env.ZOHO_EMAIL);
-  console.log("ZOHO_EMAIL_PASSWORD:", process.env.ZOHO_EMAIL_PASSWORD);
-  console.log("ADMIN_EMAIL:", process.env.ADMIN_EMAIL);
-
   // send notification to the admin email
   const transporter = nodemailer.createTransport({
     host: "smtp.zoho.com",
