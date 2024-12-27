@@ -22,10 +22,10 @@ export async function POST(req: NextRequest) {
   const mailOptions = {
     from: process.env.ZOHO_EMAIL,
     to: process.env.ADMIN_EMAIL,
-    subject: "Logiport.com.ar - Nueva consulta!",
+    subject: "logiport.com.ar - Nueva consulta!",
     html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
-          <h2 style="color: #333;">Logiport.com.ar - Nueva consulta!</h2>
+          <h2 style="color: #333;">logiport.com.ar - Nueva consulta!</h2>
           <p><strong>Nombre:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Celular:</strong> ${phone}</p>
