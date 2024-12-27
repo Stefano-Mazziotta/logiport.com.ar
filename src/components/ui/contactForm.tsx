@@ -137,6 +137,7 @@ const ContactForm: React.FC = () => {
 
       // send notification to the admin email
       const notificationResponse = await sendNotification(formData);
+      console.log("notificationResponse", notificationResponse);
 
       setIsSubmitted(true);
       toast({
@@ -294,8 +295,8 @@ const ContactForm: React.FC = () => {
               <FormControl>
                 <div
                   className="cf-turnstile"
-                  data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
-                  // data-sitekey="1x00000000000000000000AA"
+                  // data-sitekey="0x4AAAAAAA1tKJ17_9Tybxx9"
+                  data-sitekey="1x00000000000000000000AA"
                   data-callback="javascriptCallback"
                   data-theme="dark"
                   data-language="es"
@@ -321,10 +322,10 @@ const ContactForm: React.FC = () => {
           className="w-full bg-foreground hover:bg-primary"
           disabled={isLoading}
         >
+          {isLoading ? "Enviando..." : "Enviar"}
           {isLoading && (
             <LoaderCircle className="animate-spin text-secondary" />
           )}
-          {isLoading ? "Enviando..." : "Enviar"}
         </Button>
       </form>
     </Form>
