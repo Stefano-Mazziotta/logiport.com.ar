@@ -51,9 +51,6 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
-      backgroundImage: {
-        "hero-img": "url('/images/hero.jpg')",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import TypingEffect from "./typingEffect";
+import ImageBlur from "./ui/blur";
 import { Button } from "./ui/button";
 
 const Hero: React.FC = async () => {
@@ -46,7 +47,11 @@ const Hero: React.FC = async () => {
         </div>
       </section>
       <section className="md:px-10 xl:px-20">
-        <div className="relative flex h-[40vh] items-center justify-center bg-hero-img bg-cover bg-center md:rounded-md md:shadow-xl xl:h-[66vh]">
+        <div className="relative flex h-[40vh] items-center justify-center md:rounded-md md:shadow-xl xl:h-[66vh]">
+          <ImageBlur
+            src="/images/hero.jpg"
+            className="h-full w-full bg-center object-cover md:rounded-md"
+          />
           <div className="absolute inset-0 rounded-md bg-black bg-opacity-40"></div>
         </div>
       </section>
