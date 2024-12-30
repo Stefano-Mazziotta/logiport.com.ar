@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import ImageBlur from "../ui/blur";
 
 export default function AboutSection() {
   return (
@@ -9,12 +9,10 @@ export default function AboutSection() {
       <div className="grid grid-cols-1 items-center gap-2 lg:grid-cols-2">
         <div className="relative h-[300px] w-full overflow-hidden rounded-md border-solid border-foreground p-10 shadow-md lg:h-[600px]">
           <div className="absolute inset-0 z-10 bg-black opacity-30"></div>
-          <Image
+          <ImageBlur
             src="/images/Quienes-somos-img.jpg"
             alt="Amarres de barcos en puertos de Santa Fe"
-            fill
             className="object-cover"
-            priority
           />
         </div>
         <div className="relative">

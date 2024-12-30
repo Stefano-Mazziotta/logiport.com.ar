@@ -51,6 +51,7 @@ const Hero: React.FC = async () => {
           <ImageBlur
             src="/images/hero.jpg"
             className="h-full w-full bg-center object-cover md:rounded-md"
+            alt="Logiport SRL,protección y capacitación marítima."
           />
           <div className="absolute inset-0 rounded-md bg-black bg-opacity-40"></div>
         </div>

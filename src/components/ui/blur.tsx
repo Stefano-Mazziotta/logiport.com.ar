@@ -5,9 +5,11 @@ import { getPlaiceholder } from "plaiceholder";
 export default async function ImageBlur({
   src,
   className,
+  alt,
 }: {
   src: string;
   className?: string;
+  alt: string;
 }) {
   const buffer = await fs.readFile(`./public${src}`);
 
@@ -17,7 +19,7 @@ export default async function ImageBlur({
       className={className}
       src={src.replace("./public", "")}
       fill
-      alt="image"
+      alt={alt}
       placeholder="blur"
       blurDataURL={base64}
     />

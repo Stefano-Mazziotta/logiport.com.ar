@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react";
-import Image from "next/image";
 import React from "react";
+import ImageBlur from "../ui/blur";
 import ContactForm from "../ui/contactForm";
 import { Separator } from "../ui/separator";
 
@@ -9,10 +9,9 @@ const ContactSection: React.FC = () => {
     <div className="flex flex-col">
       {/* Background Image Section */}
       <section className="relative h-96">
-        <Image
-          src="/images/consultaria_maritima.jpg" // Change to the desired image
-          alt="Barco en el puerto"
-          layout="fill"
+        <ImageBlur
+          alt="Oficiales de protección de la Instalación Portuaria."
+          src="/images/opips-logiport.jpg"
           className="object-cover"
         />
         <div className="absolute inset-0 bg-foreground opacity-70"></div>
