@@ -1,5 +1,5 @@
 export const ITEMS_NAVIGATION = [
-  { href: "#home", text: "Inicio" },
+  { href: "/", text: "Inicio" },
   { href: "#services", text: "Servicios" },
   { href: "#about", text: "Sobre nosotros" },
   { href: "#contact", text: "Contáctanos" },
