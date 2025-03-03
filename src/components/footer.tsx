@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="w-full border-t border-foreground bg-foreground py-4">
       <div className="container mx-auto text-center text-sm text-secondary">
-        <span>© 2024 LOGIPORT SRL - Todos los derechos reservados.</span>
+        <span>© 2025 LOGIPORT SRL - Todos los derechos reservados.</span>
         <div className="mt-2 text-xs text-muted-foreground">
           <span>Sitio web desarrollado por </span>
           <a

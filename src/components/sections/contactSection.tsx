@@ -29,7 +29,7 @@ const ContactSection: React.FC = () => {
               Contáctanos
             </h2>
             <p className="text-muted-foreground">
-              Completá el formulario y nos pondremos en contacto contigo pronto.
+              Completa el formulario y nos pondremos en contacto.
             </p>
             <Separator className="bg-muted-foreground" />
           </div>
